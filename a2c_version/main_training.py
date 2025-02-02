@@ -45,17 +45,6 @@ if __name__ == '__main__':
 
     # set environment
     seeds = [random.randint(0, 1000) for _ in range(args.batch_size)]
-    # env = gym.vector.AsyncVectorEnv([
-    #     lambda: MetaLearningWrapper(
-    #         ImmediateSerialRecallEnv(
-    #             num_items = args.num_items,
-    #             num_targets = args.num_targets,
-    #             t_delay = args.t_delay,
-    #             # seed = seeds[i],
-    #         )
-    #     )
-    #     for i in range(args.batch_size)
-    # ])
     env = gym.vector.AsyncVectorEnv([
         lambda: ImmediateSerialRecallEnv(
             num_items = args.num_items,
