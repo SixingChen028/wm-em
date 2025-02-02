@@ -52,14 +52,6 @@ if __name__ == '__main__':
     net = torch.load(os.path.join(exp_path, f'net.pth'))
 
     # set environment
-    # env = MetaLearningWrapper(
-    #     ImmediateSerialRecallEnv(
-    #         num_items = args.num_items,
-    #         num_targets = args.num_targets,
-    #         t_delay = args.t_delay,
-    #         # seed = seeds[i],
-    #     )
-    # )
     env = ImmediateSerialRecallEnv(
         num_items = args.num_items,
         num_targets = args.num_targets,
