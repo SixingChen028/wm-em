@@ -24,16 +24,10 @@ if __name__ == '__main__':
     parser.add_argument('--jobid', type = str, default = 'wm', help = 'job id')
     parser.add_argument('--path', type = str, default = os.path.join(os.getcwd(), 'results'), help = 'path to store results')
 
-    # nework parameters
-    parser.add_argument('--hidden_size', type = int, default = 32, help = 'hidden size')
-
     # environment parameters
     parser.add_argument('--num_items', type = int, default = 3, help = 'number of items')
     parser.add_argument('--num_targets', type = float, default = 6, help = 'number of targets')
     parser.add_argument('--t_delay', type = float, default = 1, help = 'delay time')
-
-    # training parameters
-    parser.add_argument('--dataset_size', type = int, default = 10000, help = 'dataset size')
 
     args = parser.parse_args()
 
@@ -45,7 +39,7 @@ if __name__ == '__main__':
 
     # initialize dataset
     dataset = MemoryDataset(
-        size = args.dataset_size,
+        size = 0,
         num_items = args.num_items,
         num_targets = args.num_targets,
         t_delay = args.t_delay,
