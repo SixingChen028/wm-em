@@ -7,7 +7,7 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 
-from modules import *
+from modules_sl import *
 
 
 if __name__ == '__main__':
